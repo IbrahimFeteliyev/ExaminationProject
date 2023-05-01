@@ -12,6 +12,7 @@ using Web.Helper;
 namespace ExaminationProject.Areas.Dashboard.Controllers
 {
     [Area("Dashboard")]
+
     public class UserController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -44,6 +45,12 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         [HttpPost]
         public IActionResult Create(User user, IFormFile NewPhoto, int groupId)
         {
+            var passwordHasher = new PasswordHasher<IdentityUser>();
+            user.PasswordHash = passwordHasher.HashPassword(user, "123123Az@");
+
+
+            user.Email = "test3@compar.az";
+
             user.PhotoUrl = ImageHelper.UploadImage(NewPhoto, _webHostEnvironment);
             _context.Users.Add(user);
             _context.SaveChanges();
@@ -95,14 +102,14 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         }
 
 
-        [HttpGet]
-        public async Task<IActionResult> UserInfo()
-        {
-            var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-            User user = await _userManager.FindByIdAsync(userId);
+        //[HttpGet]
+        //public async Task<IActionResult> UserInfo()
+        //{
+        //    var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+        //    User user = await _userManager.FindByIdAsync(userId);
 
-            return View(user);
-        }
+        //    return View(user);
+        //}
 
 
     }

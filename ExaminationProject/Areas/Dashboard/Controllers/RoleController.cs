@@ -1,11 +1,13 @@
 ﻿using ExaminationProject.Areas.Dashboard.ViewModels;
 using ExaminationProject.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExaminationProject.Areas.Dashboard.Controllers
 {
     [Area("Dashboard")]
+
     public class RoleController : Controller
     {
         private readonly RoleManager<IdentityRole> _roleManager;

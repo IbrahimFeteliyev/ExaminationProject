@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\WebSuper\ExamSystem\ImtahanSistemi\ExaminationProject\ExaminationProject
 build_property._RazorSourceGeneratorDebug = 
 
+[E:/WebSuper/ExamSystem/ImtahanSistemi/ExaminationProject/ExaminationProject/Areas/Dashboard/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXEF1dGhcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/WebSuper/ExamSystem/ImtahanSistemi/ExaminationProject/ExaminationProject/Areas/Dashboard/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

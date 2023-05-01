@@ -18,7 +18,7 @@ builder.Services.AddDefaultIdentity<User>().AddRoles<IdentityRole>()
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
-    options.LoginPath = "/Auth/Login/";
+    options.LoginPath = "/Dashboard/Auth/Login/";
 });
 
 

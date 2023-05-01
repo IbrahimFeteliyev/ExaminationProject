@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<User>
 @inject Microsoft.AspNetCore.Identity.UserManager<User> _userManager
+
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -15,6 +16,7 @@
                         <th>Picture</th>
                         <th>Name</th>
                         <th>Surname</th>
+                        @*<th>Group</th>*@
                         <th>User roles</th>
                         <th></th>
                     </tr>
@@ -24,6 +26,7 @@
                         <th>Picture</th>
                         <th>Name</th>
                         <th>Surname</th>
+                        @*<th>Group</th>*@
                         <th>User roles</th>
                         <th></th>
                     </tr>
@@ -37,7 +40,13 @@
                             </td>
                             <td>@user.UserName</td>
                             <td>@user.Surname</td>
-                            <td>
+                            @*<td>
+                                @foreach (var userGroup in Model..Where(x => x.StudentId == user.Id))
+                                {
+                                    <span class="btn btn-outline-success btn-sm my-1">@userGroup.Group.GroupName</span>
+                                }
+                            </td>*@
+                            <td>    
                                 @{
                                     var roles = await _userManager.GetRolesAsync(user);
                                     foreach (var role in roles)
