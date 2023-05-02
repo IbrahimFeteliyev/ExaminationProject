@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aLfsc8bMDO8jh+tDa1HALBCnWNJ7GXR0LNOE5u9f1Wo=",
+  "Hash": "h8jeinFcLhDexs6TgNyvMd0PJ2gw05rxZbR2isiJQVI=",
   "Source": "ExaminationProject",
   "BasePath": "_content/ExaminationProject",
   "Mode": "Default",
@@ -33235,6 +33235,23 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\0f6b9c15-1076-4ad7-b66b-fe7c48a745c8Python_logo_01.svg.png",
+      "SourceId": "ExaminationProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\",
+      "BasePath": "_content/ExaminationProject",
+      "RelativePath": "uploads/0f6b9c15-1076-4ad7-b66b-fe7c48a745c8Python_logo_01.svg.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\0f6b9c15-1076-4ad7-b66b-fe7c48a745c8Python_logo_01.svg.png"
+    },
+    {
       "Identity": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\4382d36a-104b-4a1b-a85b-0b31062bfde7cp.png",
       "SourceId": "ExaminationProject",
       "SourceType": "Discovered",
@@ -33301,6 +33318,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\75cf6325-6cd0-4681-aea0-936241e21c02jinx-arcane-series-4k-wallpaper-3840x2160.jpg"
+    },
+    {
+      "Identity": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\7a389301-8038-47ff-9ec8-84f1f988a6c2elden-ring-22.jpg",
+      "SourceId": "ExaminationProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\",
+      "BasePath": "_content/ExaminationProject",
+      "RelativePath": "uploads/7a389301-8038-47ff-9ec8-84f1f988a6c2elden-ring-22.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\7a389301-8038-47ff-9ec8-84f1f988a6c2elden-ring-22.jpg"
     },
     {
       "Identity": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\7fcace57-ed73-4359-a2e9-7563b0b7f46edragon-chinese-fantasy-art-51-4k.jpg",
@@ -33403,6 +33437,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\ec38d367-3b9e-4f5c-864a-14b07adf1f2aemile-perron-xrVDYZRGdw4-unsplash.jpg"
+    },
+    {
+      "Identity": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\efd99aab-8ae3-4c41-bdd5-473882d88fa3javascript-logo-4.png",
+      "SourceId": "ExaminationProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\",
+      "BasePath": "_content/ExaminationProject",
+      "RelativePath": "uploads/efd99aab-8ae3-4c41-bdd5-473882d88fa3javascript-logo-4.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\efd99aab-8ae3-4c41-bdd5-473882d88fa3javascript-logo-4.png"
     },
     {
       "Identity": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\f0e4fc44-7cb8-41d9-b0d4-d67b09efee09cp.png",

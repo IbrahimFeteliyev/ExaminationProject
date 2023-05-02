@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ExaminationProject.Data;
 using ExaminationProject.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,9 +19,15 @@ builder.Services.AddDefaultIdentity<User>().AddRoles<IdentityRole>()
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
-    options.LoginPath = "/Dashboard/Auth/Login/";
+    options.LoginPath = "/Auth/Login/";
 });
 
+builder.Services.AddAuthentication()
+        .AddCookie(options =>
+        {
+            options.LoginPath = "/Account/Unauthorized/";
+            options.AccessDeniedPath = "/Account/Forbidden/";
+        });
 
 var app = builder.Build();
 

@@ -32,6 +32,12 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         }
         public IActionResult Index()
         {
+            var user = User.Identity; 
+            ViewBag.UserName = user.Name;
+
+            //ViewBag.PhotoUrl = user
+
+
             var users = _userManager.Users.ToList();
             return View(users);
         }
@@ -47,9 +53,7 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         {
             var passwordHasher = new PasswordHasher<IdentityUser>();
             user.PasswordHash = passwordHasher.HashPassword(user, "123123Az@");
-
-
-            user.Email = "test3@compar.az";
+            //user.Email = "test3@compar.az";
 
             user.PhotoUrl = ImageHelper.UploadImage(NewPhoto, _webHostEnvironment);
             _context.Users.Add(user);

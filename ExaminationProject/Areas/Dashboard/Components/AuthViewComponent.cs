@@ -16,10 +16,9 @@ namespace WebApp.Areas.Admin.Components
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            //var userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-            //var user = _context.Users.FirstOrDefault(u => u.Id == userId);
-            //return View(user);
-            return null;
+            var userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var user = _context.Users.FirstOrDefault(u => u.Id == userId);
+            return View(user);
         }
     }
 }

@@ -16,6 +16,7 @@
                         <th>Picture</th>
                         <th>Name</th>
                         <th>Surname</th>
+                        <th>Email</th>
                         @*<th>Group</th>*@
                         <th>User roles</th>
                         <th></th>
@@ -26,6 +27,7 @@
                         <th>Picture</th>
                         <th>Name</th>
                         <th>Surname</th>
+                        <th>Email</th>
                         @*<th>Group</th>*@
                         <th>User roles</th>
                         <th></th>
@@ -40,6 +42,7 @@
                             </td>
                             <td>@user.UserName</td>
                             <td>@user.Surname</td>
+                            <td>@user.Email</td>
                             @*<td>
                                 @foreach (var userGroup in Model..Where(x => x.StudentId == user.Id))
                                 {
