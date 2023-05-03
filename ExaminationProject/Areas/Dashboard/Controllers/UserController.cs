@@ -32,11 +32,6 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         }
         public IActionResult Index()
         {
-            var user = User.Identity; 
-            ViewBag.UserName = user.Name;
-
-            //ViewBag.PhotoUrl = user
-
 
             var users = _userManager.Users.ToList();
             return View(users);
@@ -53,11 +48,12 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         {
             var passwordHasher = new PasswordHasher<IdentityUser>();
             user.PasswordHash = passwordHasher.HashPassword(user, "123123Az@");
+            user.CreatedDate = DateTime.Now;
+            //user.UpdatedDate = DateTime.Now;
             //user.Email = "test3@compar.az";
 
             user.PhotoUrl = ImageHelper.UploadImage(NewPhoto, _webHostEnvironment);
-            _context.Users.Add(user);
-            _context.SaveChanges();
+            _userManager.CreateAsync(user);
             var gr = _context.Groups.FirstOrDefault(x => x.Id == groupId);
             UserGroup userGroup = new()
             {
@@ -114,7 +110,28 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
 
         //    return View(user);
         //}
+        [HttpGet]
+        public async Task<IActionResult> Delete(string id)
+        {
+            var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == id);
+            return View(user);
 
+        }
+        [HttpPost]
+        public async Task<IActionResult> Delete(User user)
+        {
+            try
+            {
+                var us = await _context.Users.SingleOrDefaultAsync(x => x.Id == user.Id);
+                us.IsDeleted = true;
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
     }
 }

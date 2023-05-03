@@ -32,7 +32,6 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         {
             try
             {
-                group.UpdatedDate = DateTime.Now;
                 _context.Groups.Add(group);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");

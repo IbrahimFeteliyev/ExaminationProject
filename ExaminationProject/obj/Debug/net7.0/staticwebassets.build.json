@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "h8jeinFcLhDexs6TgNyvMd0PJ2gw05rxZbR2isiJQVI=",
+  "Hash": "tHDSWD9B5WfbxZRYzdltKMGUdEp8RjUDBdLxIey3PT4=",
   "Source": "ExaminationProject",
   "BasePath": "_content/ExaminationProject",
   "Mode": "Default",
@@ -33252,6 +33252,23 @@
       "OriginalItemSpec": "wwwroot\\uploads\\0f6b9c15-1076-4ad7-b66b-fe7c48a745c8Python_logo_01.svg.png"
     },
     {
+      "Identity": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\11e093f9-eaaf-4852-80cd-80ccd4bc19a8wp3308935.jpg",
+      "SourceId": "ExaminationProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\",
+      "BasePath": "_content/ExaminationProject",
+      "RelativePath": "uploads/11e093f9-eaaf-4852-80cd-80ccd4bc19a8wp3308935.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\11e093f9-eaaf-4852-80cd-80ccd4bc19a8wp3308935.jpg"
+    },
+    {
       "Identity": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\4382d36a-104b-4a1b-a85b-0b31062bfde7cp.png",
       "SourceId": "ExaminationProject",
       "SourceType": "Discovered",
@@ -33371,6 +33388,40 @@
       "OriginalItemSpec": "wwwroot\\uploads\\8399da57-d6c7-4ba1-8181-82341155613fshahadat-rahman-BfrQnKBulYQ-unsplash.jpg"
     },
     {
+      "Identity": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\9877a6da-2623-4918-a9cf-0cdaa1ea04d7cp.png",
+      "SourceId": "ExaminationProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\",
+      "BasePath": "_content/ExaminationProject",
+      "RelativePath": "uploads/9877a6da-2623-4918-a9cf-0cdaa1ea04d7cp.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\9877a6da-2623-4918-a9cf-0cdaa1ea04d7cp.png"
+    },
+    {
+      "Identity": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\ae55e60f-3c85-4bf1-bf15-6d4d8c29d93ejavascript-logo-4.png",
+      "SourceId": "ExaminationProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\",
+      "BasePath": "_content/ExaminationProject",
+      "RelativePath": "uploads/ae55e60f-3c85-4bf1-bf15-6d4d8c29d93ejavascript-logo-4.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\ae55e60f-3c85-4bf1-bf15-6d4d8c29d93ejavascript-logo-4.png"
+    },
+    {
       "Identity": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\be54c41e-78fd-4729-9884-089a7a339e28javascript-logo-4.png",
       "SourceId": "ExaminationProject",
       "SourceType": "Discovered",
@@ -33386,6 +33437,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\be54c41e-78fd-4729-9884-089a7a339e28javascript-logo-4.png"
+    },
+    {
+      "Identity": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\c9b6050d-76ae-44e9-aeec-728d43193e9fgit4.jpeg",
+      "SourceId": "ExaminationProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\",
+      "BasePath": "_content/ExaminationProject",
+      "RelativePath": "uploads/c9b6050d-76ae-44e9-aeec-728d43193e9fgit4.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\c9b6050d-76ae-44e9-aeec-728d43193e9fgit4.jpeg"
     },
     {
       "Identity": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\d1d98eba-de8f-44a7-b557-ffce0863f1fdlimon.jpg",
