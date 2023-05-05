@@ -24,10 +24,11 @@ namespace ExaminationProject.Controllers
         public async Task<IActionResult> Login(LoginDTO loginDTO)
         {
             var checkEmail = await _userManager.FindByEmailAsync(loginDTO.Email);
-            if (checkEmail == null)
-            {
+            if ( checkEmail == null) {
+
                 return View();
             }
+            //checkEmail.IsDeleted == true ||
 
             Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(checkEmail, loginDTO.Password, false, false);
             if (result.Succeeded)

@@ -51,6 +51,7 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(Group group)
         {
+
             try
             {
                 group.UpdatedDate = DateTime.Now;

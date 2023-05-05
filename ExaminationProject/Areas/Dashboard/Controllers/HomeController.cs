@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ExaminationProject.Areas.Dashboard.Controllers
 {
     [Area("Dashboard")]
-    [Authorize]
+    [Authorize(Policy = "IsNotDeletedPolicy")]
     public class HomeController : Controller
     {
         public IActionResult Index()
@@ -13,3 +13,4 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         }
     }
 }
+//(Policy = "IsNotDeletedPolicy")

@@ -49,8 +49,6 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
             var passwordHasher = new PasswordHasher<IdentityUser>();
             user.PasswordHash = passwordHasher.HashPassword(user, "123123Az@");
             user.CreatedDate = DateTime.Now;
-            //user.UpdatedDate = DateTime.Now;
-            //user.Email = "test3@compar.az";
 
             user.PhotoUrl = ImageHelper.UploadImage(NewPhoto, _webHostEnvironment);
             _userManager.CreateAsync(user);
@@ -101,15 +99,58 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Edit(User user, string id)
+        {
+            //ViewData["User"] = _context.Users.Where(x => x.Id == user.Id);
+            var usr = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            var group = _context.Groups.ToList();
+            var userGroup = _context.UserGroups.Where(x => x.UserId == user.Id).ToList();
 
-        //[HttpGet]
-        //public async Task<IActionResult> UserInfo()
-        //{
-        //    var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-        //    User user = await _userManager.FindByIdAsync(userId);
+            UserEditVM editVM = new()
+            {
+                Users = usr,
+                Groups = group,
+                UserGroups = userGroup,
+            };
+            return View(editVM);
+        }
 
-        //    return View(user);
-        //}
+        [HttpPost]
+        public IActionResult Edit(User user, IFormFile NewPhoto, string OldPhoto, int groupId)
+        {
+            try
+            {
+                if (NewPhoto != null)
+                {
+                    user.PhotoUrl = ImageHelper.UploadImage(NewPhoto, _webHostEnvironment);
+                }
+                else
+                {
+                    user.PhotoUrl = OldPhoto;
+                }
+                user.UpdatedDate = DateTime.Now;
+                _context.Users.Update(user);
+
+                var userGroup = _context.UserGroups.Where(x => x.UserId == user.Id).ToList();
+                _context.UserGroups.RemoveRange(userGroup);
+                _context.SaveChanges();
+                var gr = _context.Groups.FirstOrDefault(x => x.Id == groupId);
+                UserGroup ug = new()
+                {
+                    UserId = user.Id,
+                    GroupId = gr.Id,
+                };
+                _context.UserGroups.Add(ug);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                return View();
+            }
+        }
+      
         [HttpGet]
         public async Task<IActionResult> Delete(string id)
         {
@@ -117,6 +158,7 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
             return View(user);
 
         }
+
         [HttpPost]
         public async Task<IActionResult> Delete(User user)
         {
@@ -132,6 +174,14 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
                 throw;
             }
         }
+        //[HttpGet]
+        //public async Task<IActionResult> UserInfo()
+        //{
+        //    var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+        //    User user = await _userManager.FindByIdAsync(userId);
+
+        //    return View(user);
+        //}
 
     }
 }

@@ -3,6 +3,7 @@ using ExaminationProject.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ExaminationProject.Areas.Dashboard.Controllers
 {
@@ -100,7 +101,7 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
                 return View(model);
             }
         }
-        //[HttpPost]
+        //[HttpGet]
         //public async Task<IActionResult> Delete(string id)
         //{
         //    var role = await _roleManager.FindByIdAsync(id);
@@ -109,19 +110,48 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         //        ViewBag.ErrorMessage = $"Role with Id = {id} cannot be found";
         //        return View("NotFound");
         //    }
-        //    else
-        //    {
+        //    return View(role);
+        //}
+        
+        //public async Task<IActionResult> Delete(IdentityUserRole<User> role)
+        //{
+
+        //    var check = _roleManager.FindByIdAsync();
         //        var result = await _roleManager.DeleteAsync(role);
         //        if (result.Succeeded)
-        //        {
-        //            return RedirectToAction("");
+        //        {   
+        //            return RedirectToAction("Index", "Home");
         //        }
         //        foreach (var error in result.Errors)
         //        {
         //            ModelState.AddModelError("", error.Description);
         //        }
         //        return View("Delete");
-        //    }
+
         //}
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(string id)
+        {
+            var role = await _roleManager.FindByIdAsync(id);
+            if (role == null)
+            {
+                ViewBag.ErrorMessage = $"Role with Id = {id} cannot be found";
+                return View("NotFound");
+            }
+            else
+            {
+                var result = await _roleManager.DeleteAsync(role);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("");
+                }
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                return View("Delete");
+            }
+        }
     }
 }
