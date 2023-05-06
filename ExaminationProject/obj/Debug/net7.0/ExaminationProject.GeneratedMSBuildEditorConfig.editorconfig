@@ -44,10 +44,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXFJvbGVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/WebSuper/ExamSystem/ImtahanSistemi/ExaminationProject/ExaminationProject/Areas/Dashboard/Views/Role/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXFJvbGVcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [E:/WebSuper/ExamSystem/ImtahanSistemi/ExaminationProject/ExaminationProject/Areas/Dashboard/Views/Role/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXFJvbGVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

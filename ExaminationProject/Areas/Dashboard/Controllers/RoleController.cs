@@ -101,35 +101,6 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
                 return View(model);
             }
         }
-        //[HttpGet]
-        //public async Task<IActionResult> Delete(string id)
-        //{
-        //    var role = await _roleManager.FindByIdAsync(id);
-        //    if (role == null)
-        //    {
-        //        ViewBag.ErrorMessage = $"Role with Id = {id} cannot be found";
-        //        return View("NotFound");
-        //    }
-        //    return View(role);
-        //}
-        
-        //public async Task<IActionResult> Delete(IdentityUserRole<User> role)
-        //{
-
-        //    var check = _roleManager.FindByIdAsync();
-        //        var result = await _roleManager.DeleteAsync(role);
-        //        if (result.Succeeded)
-        //        {   
-        //            return RedirectToAction("Index", "Home");
-        //        }
-        //        foreach (var error in result.Errors)
-        //        {
-        //            ModelState.AddModelError("", error.Description);
-        //        }
-        //        return View("Delete");
-
-        //}
-
         [HttpPost]
         public async Task<IActionResult> Delete(string id)
         {

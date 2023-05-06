@@ -13,4 +13,3 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         }
     }
 }
-//(Policy = "IsNotDeletedPolicy")

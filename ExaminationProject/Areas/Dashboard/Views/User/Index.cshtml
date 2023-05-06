@@ -1,4 +1,4 @@
-﻿@model IEnumerable<User>
+﻿@model UserVM
 @inject Microsoft.AspNetCore.Identity.UserManager<User> _userManager
 
 <!-- DataTales Example -->
@@ -20,7 +20,7 @@
                         <th>CreatedDate</th>
                         <th>UpdatedDate</th>
                         <th>IsDeleted</th>
-                        @*<th>Group</th>*@
+                        <th>Group</th>
                         <th>User roles</th>
                         <th></th>
                     </tr>
@@ -34,13 +34,13 @@
                         <th>CreatedDate</th>
                         <th>UpdatedDate</th>
                         <th>IsDeleted</th>
-                        @*<th>Group</th>*@
+                        <th>Group</th>
                         <th>User roles</th>
                         <th></th>
                     </tr>
                 </tfoot>
                 <tbody>
-                    @foreach (var user in Model)
+                    @foreach (var user in Model.Users)
                     {
                         <tr>
                             <td>
@@ -52,12 +52,12 @@
                             <td>@user.CreatedDate</td>
                             <td>@user.UpdatedDate</td>
                             <td>@user.IsDeleted</td>
-                            @*<td>
-                                @foreach (var userGroup in Model..Where(x => x.StudentId == user.Id))
+                            <td>
+                                @foreach (var userGroup in Model.UserGroups.Where(x => x.UserId == user.Id))
                                 {
                                     <span class="btn btn-outline-success btn-sm my-1">@userGroup.Group.GroupName</span>
                                 }
-                            </td>*@
+                            </td>
                             <td>    
                                 @{
                                     var roles = await _userManager.GetRolesAsync(user);

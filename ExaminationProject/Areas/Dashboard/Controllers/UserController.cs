@@ -32,9 +32,12 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         }
         public IActionResult Index()
         {
-
-            var users = _userManager.Users.ToList();
-            return View(users);
+            UserVM vm = new ();
+            vm.Users = _userManager.Users.ToList(); 
+            vm.Groups = _context.Groups.ToList();
+            vm.UserGroups = _context.UserGroups.ToList();
+            //var users = _userManager.Users.ToList();
+            return View(vm);
         }
 
         [HttpGet]
@@ -109,7 +112,7 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
 
             UserEditVM editVM = new()
             {
-                Users = usr,
+                User = usr,
                 Groups = group,
                 UserGroups = userGroup,
             };
@@ -117,7 +120,7 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(User user, IFormFile NewPhoto, string OldPhoto, int groupId)
+        public async Task<IActionResult> Edit(User user, IFormFile NewPhoto, string OldPhoto, int groupId)
         {
             try
             {
@@ -129,12 +132,21 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
                 {
                     user.PhotoUrl = OldPhoto;
                 }
+                //_context.Users.Update(user);
+                //_context.SaveChanges();
+
                 user.UpdatedDate = DateTime.Now;
-                _context.Users.Update(user);
+                var data = await _userManager.FindByIdAsync(user.Id);
+                data.Surname = user.Surname;
+                data.Email = user.Email;
+                data.UserName = user.UserName;
+
+                await _userManager.UpdateAsync(user);
+                _context.SaveChanges();
 
                 var userGroup = _context.UserGroups.Where(x => x.UserId == user.Id).ToList();
                 _context.UserGroups.RemoveRange(userGroup);
-                _context.SaveChanges();
+                //_context.SaveChanges();
                 var gr = _context.Groups.FirstOrDefault(x => x.Id == groupId);
                 UserGroup ug = new()
                 {
@@ -147,6 +159,7 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
             }
             catch (Exception e)
             {
+                ViewBag.Error = e.Message;
                 return View();
             }
         }
@@ -156,7 +169,6 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         {
             var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == id);
             return View(user);
-
         }
 
         [HttpPost]
