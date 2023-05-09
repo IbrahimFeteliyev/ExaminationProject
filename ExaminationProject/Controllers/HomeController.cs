@@ -1,10 +1,10 @@
-﻿using ExaminationProject.Models;
+﻿using ExaminationProject.Data;
+using ExaminationProject.Models;
+using ExaminationProject.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
-using System.Security.Claims;
 
 namespace ExaminationProject.Controllers
 {
@@ -12,21 +12,28 @@ namespace ExaminationProject.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly UserManager<User> _userManager;
-        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly AppDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<User> userManager, IHttpContextAccessor httpContextAccessor)
+        public HomeController(ILogger<HomeController> logger, AppDbContext context)
         {
             _logger = logger;
-            _userManager = userManager;
-            _httpContextAccessor = httpContextAccessor;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            var userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-            var user = _userManager.Users.FirstOrDefault(u => u.Id == userId);
-            return View(user);
+            HomeVM vm = new()
+            {
+                ExamCategories = _context.ExamCategories.Where(x => x.IsDeleted == false).ToList(),
+            };
+            
+            return View(vm);
+        }
+        [HttpGet("examcategory")]
+        public IActionResult ExamCategory()
+        {
+        
+            return View();
         }
 
         public IActionResult Privacy()

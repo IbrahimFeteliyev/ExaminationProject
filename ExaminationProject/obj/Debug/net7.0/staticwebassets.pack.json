@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ExaminationProject.bundle.scp.css",
-      "PackagePath": "staticwebassets\\ExaminationProject.bundle.scp.css"
-    },
-    {
       "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\admin\\css\\sb-admin-2.css",
       "PackagePath": "staticwebassets\\admin\\css\\sb-admin-2.css"
     },
@@ -7333,244 +7329,32 @@
       "PackagePath": "staticwebassets\\admin\\vendor\\jquery\\jquery.slim.min.map"
     },
     {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\css\\exam_style.css",
+      "PackagePath": "staticwebassets\\css\\exam_style.css"
     },
     {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\favicon.ico",
-      "PackagePath": "staticwebassets\\favicon.ico"
+      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\css\\exam_style.css.map",
+      "PackagePath": "staticwebassets\\css\\exam_style.css.map"
     },
     {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
+      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\css\\exam_style.scss",
+      "PackagePath": "staticwebassets\\css\\exam_style.scss"
     },
     {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\LICENSE",
-      "PackagePath": "staticwebassets\\lib\\bootstrap"
+      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\css\\style.css.map",
+      "PackagePath": "staticwebassets\\css\\style.css.map"
     },
     {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\css\\style.scss",
+      "PackagePath": "staticwebassets\\css\\style.scss"
     },
     {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\jquery\\LICENSE.txt",
-      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
-      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
-      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
-      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
     },
     {
       "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\02f3e4e3-6225-4cc4-b10a-ccfe9a438d23jinx-arcane-series-4k-wallpaper-3840x2160.jpg",
@@ -7645,8 +7429,20 @@
       "PackagePath": "staticwebassets\\uploads\\8399da57-d6c7-4ba1-8181-82341155613fshahadat-rahman-BfrQnKBulYQ-unsplash.jpg"
     },
     {
+      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\8f39a6db-d945-4978-968e-c473ede7465dghost-mw2-game.jpg",
+      "PackagePath": "staticwebassets\\uploads\\8f39a6db-d945-4978-968e-c473ede7465dghost-mw2-game.jpg"
+    },
+    {
       "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\9877a6da-2623-4918-a9cf-0cdaa1ea04d7cp.png",
       "PackagePath": "staticwebassets\\uploads\\9877a6da-2623-4918-a9cf-0cdaa1ea04d7cp.png"
+    },
+    {
+      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\9aedb7bf-6f1c-4e66-ba1b-f0f378b674c34021922.jpg",
+      "PackagePath": "staticwebassets\\uploads\\9aedb7bf-6f1c-4e66-ba1b-f0f378b674c34021922.jpg"
+    },
+    {
+      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\a18849e7-def9-402a-8a54-9844b2b99940wallpapersden.com_arcane-league-of-legends-cool-hd-fortnite_3840x2160.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a18849e7-def9-402a-8a54-9844b2b99940wallpapersden.com_arcane-league-of-legends-cool-hd-fortnite_3840x2160.jpg"
     },
     {
       "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\ae2fa0b6-053a-4f8d-8f70-0ad044c0b948mw2gost.jpg",
@@ -7655,6 +7451,10 @@
     {
       "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\ae55e60f-3c85-4bf1-bf15-6d4d8c29d93ejavascript-logo-4.png",
       "PackagePath": "staticwebassets\\uploads\\ae55e60f-3c85-4bf1-bf15-6d4d8c29d93ejavascript-logo-4.png"
+    },
+    {
+      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\b38b830f-c49b-42d4-a0ff-537b7be4e4902592101.jpg",
+      "PackagePath": "staticwebassets\\uploads\\b38b830f-c49b-42d4-a0ff-537b7be4e4902592101.jpg"
     },
     {
       "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\be54c41e-78fd-4729-9884-089a7a339e28javascript-logo-4.png",
@@ -7695,6 +7495,14 @@
     {
       "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\f8d8b166-a892-4c91-9a04-4451f87d03e7cp.png",
       "PackagePath": "staticwebassets\\uploads\\f8d8b166-a892-4c91-9a04-4451f87d03e7cp.png"
+    },
+    {
+      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\vendors\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\vendors\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\vendors\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\vendors\\js\\bootstrap.bundle.js"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ExaminationProject.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -1,13 +1,11 @@
 ﻿using ExaminationProject.Areas.Dashboard.ViewModels;
 using ExaminationProject.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace ExaminationProject.Areas.Dashboard.Controllers
 {
-    [Area("Dashboard")]
+    [Area(nameof(Dashboard))]
 
     public class RoleController : Controller
     {

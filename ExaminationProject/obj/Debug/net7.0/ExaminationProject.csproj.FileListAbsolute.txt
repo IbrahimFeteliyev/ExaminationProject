@@ -273,9 +273,7 @@ E:\WebSuper\ExamSystem\ImtahanSistemi\ExaminationProject\ExaminationProject\obj\
 E:\WebSuper\ExamSystem\ImtahanSistemi\ExaminationProject\ExaminationProject\obj\Debug\net7.0\staticwebassets.pack.json
 E:\WebSuper\ExamSystem\ImtahanSistemi\ExaminationProject\ExaminationProject\obj\Debug\net7.0\staticwebassets.build.json
 E:\WebSuper\ExamSystem\ImtahanSistemi\ExaminationProject\ExaminationProject\obj\Debug\net7.0\staticwebassets.development.json
-E:\WebSuper\ExamSystem\ImtahanSistemi\ExaminationProject\ExaminationProject\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 E:\WebSuper\ExamSystem\ImtahanSistemi\ExaminationProject\ExaminationProject\obj\Debug\net7.0\scopedcss\bundle\ExaminationProject.styles.css
-E:\WebSuper\ExamSystem\ImtahanSistemi\ExaminationProject\ExaminationProject\obj\Debug\net7.0\scopedcss\projectbundle\ExaminationProject.bundle.scp.css
 E:\WebSuper\ExamSystem\ImtahanSistemi\ExaminationProject\ExaminationProject\obj\Debug\net7.0\ExaminationProject.csproj.CopyComplete
 E:\WebSuper\ExamSystem\ImtahanSistemi\ExaminationProject\ExaminationProject\obj\Debug\net7.0\ExaminationProject.dll
 E:\WebSuper\ExamSystem\ImtahanSistemi\ExaminationProject\ExaminationProject\obj\Debug\net7.0\refint\ExaminationProject.dll

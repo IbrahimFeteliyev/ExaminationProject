@@ -11,6 +11,12 @@ namespace ExaminationProject.Data
 
         public DbSet<Group> Groups { get; set; }
         public DbSet<UserGroup> UserGroups { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<QuestionAnswer> QuestionAnswers { get; set; }
+        public DbSet<Answer> Answers { get; set; }
+        public DbSet<Exam> Exams { get; set; }
+        public DbSet<ExamCategory> ExamCategories { get; set; }
+        public DbSet<ExamResult> ExamResults { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
