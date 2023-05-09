@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 namespace ExaminationProject.Controllers
 {
-    [Authorize(Policy = "IsNotDeletedPolicy")]
+    //[Authorize(Policy = "IsNotDeletedPolicy")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

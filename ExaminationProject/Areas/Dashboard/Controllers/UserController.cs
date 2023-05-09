@@ -1,12 +1,9 @@
 ﻿using ExaminationProject.Areas.Dashboard.ViewModels;
 using ExaminationProject.Data;
 using ExaminationProject.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
 using Web.Helper;
 
 namespace ExaminationProject.Areas.Dashboard.Controllers
@@ -47,24 +44,29 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(User user, IFormFile NewPhoto, int groupId)
+        public async Task<IActionResult> Create(User user, IFormFile NewPhoto, int groupId)
         {
             var passwordHasher = new PasswordHasher<IdentityUser>();
             user.PasswordHash = passwordHasher.HashPassword(user, "123123Az@");
             user.CreatedDate = DateTime.Now;
 
             user.PhotoUrl = ImageHelper.UploadImage(NewPhoto, _webHostEnvironment);
-            _userManager.CreateAsync(user);
+
+            await _userManager.CreateAsync(user);
+
             var gr = _context.Groups.FirstOrDefault(x => x.Id == groupId);
+
             UserGroup userGroup = new()
             {
                 UserId = user.Id,
                 GroupId = gr.Id,
             };
+
             _context.UserGroups.Add(userGroup);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
 
         [HttpGet]
         public async Task<IActionResult> AddRole(string id)
@@ -103,12 +105,11 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Edit(User user, string id)
+        public async Task<IActionResult> Edit(string id)
         {
-            //ViewData["User"] = _context.Users.Where(x => x.Id == user.Id);
-            var usr = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
-            var group = _context.Groups.ToList();
-            var userGroup = _context.UserGroups.Where(x => x.UserId == user.Id).ToList();
+            var usr = await _context.Users.FindAsync(id);
+            var group = await _context.Groups.ToListAsync();
+            var userGroup = await _context.UserGroups.Where(x => x.UserId == usr.Id).ToListAsync();
 
             UserEditVM editVM = new()
             {
@@ -132,8 +133,6 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
                 {
                     user.PhotoUrl = OldPhoto;
                 }
-                //_context.Users.Update(user);
-                //_context.SaveChanges();
 
                 user.UpdatedDate = DateTime.Now;
                 var data = await _userManager.FindByIdAsync(user.Id);
@@ -142,19 +141,19 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
                 data.UserName = user.UserName;
 
                 await _userManager.UpdateAsync(user);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
 
-                var userGroup = _context.UserGroups.Where(x => x.UserId == user.Id).ToList();
+                var userGroup = await _context.UserGroups.Where(x => x.UserId == user.Id).ToListAsync();
                 _context.UserGroups.RemoveRange(userGroup);
-                //_context.SaveChanges();
-                var gr = _context.Groups.FirstOrDefault(x => x.Id == groupId);
+                var gr = await _context.Groups.FirstOrDefaultAsync(x => x.Id == groupId);
                 UserGroup ug = new()
                 {
                     UserId = user.Id,
                     GroupId = gr.Id,
                 };
-                _context.UserGroups.Add(ug);
-                _context.SaveChanges();
+                await _context.UserGroups.AddAsync(ug);
+                await _context.SaveChangesAsync();
+
                 return RedirectToAction("Index");
             }
             catch (Exception e)
@@ -163,7 +162,8 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
                 return View();
             }
         }
-      
+
+
         [HttpGet]
         public async Task<IActionResult> Delete(string id)
         {
