@@ -107,7 +107,7 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(string id)
         {
-            var usr = await _context.Users.FindAsync(id);
+            var usr = await _userManager.FindByIdAsync(id);
             var group = await _context.Groups.ToListAsync();
             var userGroup = await _context.UserGroups.Where(x => x.UserId == usr.Id).ToListAsync();
 
@@ -136,9 +136,9 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
 
                 user.UpdatedDate = DateTime.Now;
                 var data = await _userManager.FindByIdAsync(user.Id);
+                data.UserName = user.UserName;
                 data.Surname = user.Surname;
                 data.Email = user.Email;
-                data.UserName = user.UserName;
 
                 await _userManager.UpdateAsync(user);
                 await _context.SaveChangesAsync();

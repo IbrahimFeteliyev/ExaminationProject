@@ -1,4 +1,4 @@
-﻿<main>
+﻿@*<main>
     <div class="container">
         <h1 class="title text-center py-3">Examination System</h1>
         <div class="question mb-5">
@@ -84,4 +84,102 @@
         </div>
     </div>
 
+</main>*@
+@*<main>
+    <div class="container">
+        <h1 class="title text-center py-3">Exam Name</h1>
+        <div class="question mb-3">
+            <ol>
+                <li style="font-size:1.5rem">
+                    What is the difference between static, public, and void?
+                    <div class="answers mt-2">
+                        <label class="d-block mb-1">
+                            <span style="font-size:1rem" class="d-flex align-items-center">
+                                <input value="true" id="answ1" type="checkbox" />
+                                <label class="mx-3" style="user-select:none" for="answ1">
+                                    Answer1
+                                </label>
+                            </span>
+                            <span style="font-size:1rem" class="d-flex align-items-center">
+                                <input value="true" id="answ2" type="checkbox" />
+                                <label class="mx-3" style="user-select:none" for="answ2">
+                                    Answer2
+                                </label>
+                            </span>
+                            <span style="font-size:1rem" class="d-flex align-items-center">
+                                <input value="true" id="answ3" type="checkbox" />
+                                <label class="mx-3" style="user-select:none" for="answ3">
+                                    Answer3
+                                </label>
+                            </span>
+                            <span style="font-size:1rem" class="d-flex align-items-center">
+                                <input value="true" id="answ4" type="checkbox" />
+                                <label class="mx-3" style="user-select:none" for="answ4">
+                                    Answer4
+                                </label>
+                        </label>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</main>
+
+
+*@
+
+
+
+
+@model ExamCategoryVM
+
+<main>
+    <div class="container">
+        <h1 class="title text-center py-3">Suallar</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>suallar</th>
+                    <th>cavablar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var question in Model.Questions)
+                {
+                    <tr>
+                        <td>@question.Content</td>
+                        <td>
+                            <ul>
+                                @foreach (var questionanswer in Model.QuestionAnswers.Where(x => x.QuestionId == question.Id))
+                                {
+                                    @if (questionanswer.Question.ExamCategoryId == Model.SelectedCategoryId)
+                                    {
+                                        <li>
+                                            <p class="btn btn-outline-success btn-sm my-1">@questionanswer.Answer.Option</p>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                }
+                @*
+                @foreach (var question in Model.Questions)
+                {
+                <tr>
+                <td>@question.Content</td>
+                <td>
+                <ul>
+                @foreach (var questionanswer in Model.QuestionAnswers.Where(x => x.QuestionId == question.Id))
+                {
+
+                <p class="btn btn-outline-success btn-sm my-1">@questionanswer.Answer.Option</p>
+                }
+                </ul>
+                </td>
+                </tr>
+                }*@
+            </tbody>
+        </table>
+    </div>
 </main>

@@ -4,6 +4,7 @@ using ExaminationProject.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace ExaminationProject.Controllers
@@ -29,13 +30,28 @@ namespace ExaminationProject.Controllers
             
             return View(vm);
         }
-        [HttpGet("examcategory")]
-        public IActionResult ExamCategory()
-        {
-        
-            return View();
-        }
 
+        [HttpGet("examcategory/{id}")]
+        public IActionResult ExamCategory(int id)
+        {
+            var questions = _context.Questions.Where(x => x.ExamCategoryId == id).ToList();
+            var questionIds = questions.Select(x => x.Id).ToList();
+            var questionAnswers = _context.QuestionAnswers
+                .Include(x => x.Answer)
+                .Where(x => questionIds.Contains(x.QuestionId))
+                .ToList();
+            var answers = questionAnswers.Select(x => x.Answer).Distinct().ToList();
+
+            var vm = new ExamCategoryVM
+            {
+                SelectedCategoryId = id,
+                Questions = questions,
+                Answers = answers,
+                QuestionAnswers = questionAnswers
+            };
+
+            return View(vm);
+        }
         public IActionResult Privacy()
         {
             return View();

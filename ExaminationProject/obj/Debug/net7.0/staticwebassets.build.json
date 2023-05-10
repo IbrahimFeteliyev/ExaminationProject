@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ql5Og3yZfShB9RhMVcfsOe9al12/qd9QafINMSH1x/M=",
+  "Hash": "so/T3HbqHaYySC2gNlabCGdxzj59zeiAMocD1CvAFxo=",
   "Source": "ExaminationProject",
   "BasePath": "_content/ExaminationProject",
   "Mode": "Default",
@@ -32315,6 +32315,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\700f3681-b5ff-476b-bf94-81bd9acc9ffd1153100.jpg"
+    },
+    {
+      "Identity": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\uploads\\cd278877-44db-4da8-9d64-ba4eb1f33400ghost-mw2-game.jpg",
+      "SourceId": "ExaminationProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\",
+      "BasePath": "_content/ExaminationProject",
+      "RelativePath": "uploads/cd278877-44db-4da8-9d64-ba4eb1f33400ghost-mw2-game.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\cd278877-44db-4da8-9d64-ba4eb1f33400ghost-mw2-game.jpg"
     },
     {
       "Identity": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\vendors\\css\\bootstrap.css",
