@@ -1,11 +1,10 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using ExaminationProject.Authorization;
 using ExaminationProject.Data;
 using ExaminationProject.Models;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using static ExaminationProject.Authorization.IsNotDeletedRequirement;
-using ExaminationProject.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +17,6 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<AppDbContext>(option => option.UseSqlServer(connectionString));
 builder.Services.AddDefaultIdentity<User>().AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
-
 
 builder.Services.ConfigureApplicationCookie(options =>
 {

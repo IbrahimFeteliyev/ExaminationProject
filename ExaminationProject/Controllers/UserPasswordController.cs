@@ -1,5 +1,6 @@
 ﻿using ExaminationProject.Models;
 using ExaminationProject.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,6 +19,7 @@ namespace ExaminationProject.Controllers
 
 
         [HttpGet]
+        [Authorize(Policy = "IsNotDeletedPolicy")]
         public IActionResult ChangePassword()
         {
             return View();
@@ -53,6 +55,7 @@ namespace ExaminationProject.Controllers
         }
 
         [HttpGet]
+        [Authorize(Policy = "IsNotDeletedPolicy")]
         public IActionResult ChangePasswordConfirmation()
         {
             return View();

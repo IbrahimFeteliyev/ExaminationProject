@@ -17,8 +17,8 @@
                         <th>Name</th>
                         <th>Surname</th>
                         <th>Email</th>
-                        <th>CreatedDate</th>
-                        <th>UpdatedDate</th>
+                        @*<th>CreatedDate</th>*@
+                        @*<th>UpdatedDate</th>*@
                         <th>IsDeleted</th>
                         <th>Group</th>
                         <th>User roles</th>
@@ -31,8 +31,8 @@
                         <th>Name</th>
                         <th>Surname</th>
                         <th>Email</th>
-                        <th>CreatedDate</th>
-                        <th>UpdatedDate</th>
+                        @*<th>CreatedDate</th>*@
+                        @*<th>UpdatedDate</th>*@
                         <th>IsDeleted</th>
                         <th>Group</th>
                         <th>User roles</th>
@@ -49,8 +49,8 @@
                             <td>@user.UserName</td>
                             <td>@user.Surname</td>
                             <td>@user.Email</td>
-                            <td>@user.CreatedDate</td>
-                            <td>@user.UpdatedDate</td>
+                            @*<td>@user.CreatedDate</td>*@
+                            @*<td>@user.UpdatedDate</td>*@
                             <td>@user.IsDeleted</td>
                             <td>
                                 @foreach (var userGroup in Model.UserGroups.Where(x => x.UserId == user.Id))
@@ -68,9 +68,9 @@
                                 }
                             </td>
                             <td>
-                                <a asp-area="Dashboard" asp-controller="User" asp-action="AddRole" asp-route-id="@user.Id">Add role</a>
+                                <a asp-area="Dashboard" asp-controller="User" asp-action="AddRole" asp-route-id="@user.Id" class="btn btn-outline-info">Add role</a>
                                 @*<a href="/dashboard/role/delete/@user.Id">Delete</a>*@
-                                <a href="/dashboard/user/edit/@user.Id">Edit</a>
+                                <a href="/dashboard/user/edit/@user.Id" class="btn btn-outline-warning">Edit</a>
                                 <a href="/dashboard/user/delete/@user.Id" class="btn btn-outline-danger">Delete User</a>
 
                             </td>

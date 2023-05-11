@@ -34,9 +34,9 @@
                             <th>@Html.Raw(role.Id.Substring(1,5))</th>
                             <th>@role.Name</th>
                             <th>
-                                <a href="/dashboard/role/edit/@role.Id" class="btn btn-info">Update</a>
+                                <a href="/dashboard/role/edit/@role.Id" class="btn btn-outline-warning">Edit</a>
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
                                         data-bs-target="#@staticBackdrop">
                                     Delete
                                 </button>
