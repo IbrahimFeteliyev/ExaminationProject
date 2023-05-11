@@ -7329,28 +7329,8 @@
       "PackagePath": "staticwebassets\\admin\\vendor\\jquery\\jquery.slim.min.map"
     },
     {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\css\\exam_style.css",
-      "PackagePath": "staticwebassets\\css\\exam_style.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\css\\exam_style.css.map",
-      "PackagePath": "staticwebassets\\css\\exam_style.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\css\\exam_style.scss",
-      "PackagePath": "staticwebassets\\css\\exam_style.scss"
-    },
-    {
       "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\css\\style.css.map",
-      "PackagePath": "staticwebassets\\css\\style.css.map"
-    },
-    {
-      "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\css\\style.scss",
-      "PackagePath": "staticwebassets\\css\\style.scss"
     },
     {
       "Id": "E:\\WebSuper\\ExamSystem\\ImtahanSistemi\\ExaminationProject\\ExaminationProject\\wwwroot\\js\\main.js",

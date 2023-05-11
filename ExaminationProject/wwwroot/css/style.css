@@ -1,10 +1,9 @@
 body {
-  min-height: 100vh;
-  font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif;
+    background-color: #E5E7E9;
 }
 
 body main {
-  background-color: #E5E7E9;
 }
 
 body main .exam-title span {
@@ -33,4 +32,7 @@ body main .exam-boxes .exam-box h4 {
           transform: translate(-50%, -50%);
   color: #4444eb;
 }
-/*# sourceMappingURL=style.css.map */
+
+ol li::marker  {
+    font-size: 20px;
+}

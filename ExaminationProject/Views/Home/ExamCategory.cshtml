@@ -1,185 +1,48 @@
-﻿@*<main>
-    <div class="container">
-        <h1 class="title text-center py-3">Examination System</h1>
-        <div class="question mb-5">
-            <h4 class="question-title">
-                1. What is the difference between static, public, and void?
-            </h4>
-            <div class="answers">
-                <label class="d-block mb-1">
-                    <input type="radio">
-                    <span>
-                        An object is a class instance that can be used to access class methods. The "New" keyword
-                        can
-                        be used to construct an object.
-                    </span>
-                </label>
-                <label class="d-block mb-1">
-                    <input type="radio">
-                    <span>A constructor is a member function with the same name as its class.</span>
-                </label>
-                <label class="d-block mb-1">
-                    <input type="radio">
-                    <span>The Array which comprises elements of type array is called Jagged Array.</span>
-                </label>
-                <label class="d-block mb-1">
-                    <input type="radio">
-                    <span>No. This is because only static variables/methods can be used in a static method.</span>
-                </label>
-            </div>
-        </div>
-        <div class="question mb-5">
-            <h4 class="question-title">
-                2. What is the difference between static, public, and void?
-            </h4>
-            <div class="answers">
-                <label class="d-block mb-1">
-                    <input type="radio">
-                    <span>
-                        An object is a class instance that can be used to access class methods. The "New" keyword
-                        can
-                        be used to construct an object.
-                    </span>
-                </label>
-                <label class="d-block mb-1">
-                    <input type="radio">
-                    <span>A constructor is a member function with the same name as its class.</span>
-                </label>
-                <label class="d-block mb-1">
-                    <input type="radio">
-                    <span>The Array which comprises elements of type array is called Jagged Array.</span>
-                </label>
-                <label class="d-block mb-1">
-                    <input type="radio">
-                    <span>No. This is because only static variables/methods can be used in a static method.</span>
-                </label>
-            </div>
-        </div>
-        <div class="question mb-5">
-            <h4 class="question-title">
-                3. What is the difference between static, public, and void?
-            </h4>
-            <div class="answers">
-                <label class="d-block mb-1">
-                    <input type="radio">
-                    <span>
-                        An object is a class instance that can be used to access class methods. The "New" keyword
-                        can
-                        be used to construct an object.
-                    </span>
-                </label>
-                <label class="d-block mb-1">
-                    <input type="radio">
-                    <span>A constructor is a member function with the same name as its class.</span>
-                </label>
-                <label class="d-block mb-1">
-                    <input type="radio">
-                    <span>The Array which comprises elements of type array is called Jagged Array.</span>
-                </label>
-                <label class="d-block mb-1">
-                    <input type="radio">
-                    <span>No. This is because only static variables/methods can be used in a static method.</span>
-                </label>
-            </div>
-        </div>
-    </div>
+﻿@model ExamCategoryVM
 
-</main>*@
-@*<main>
-    <div class="container">
-        <h1 class="title text-center py-3">Exam Name</h1>
-        <div class="question mb-3">
-            <ol>
-                <li style="font-size:1.5rem">
-                    What is the difference between static, public, and void?
-                    <div class="answers mt-2">
-                        <label class="d-block mb-1">
-                            <span style="font-size:1rem" class="d-flex align-items-center">
-                                <input value="true" id="answ1" type="checkbox" />
-                                <label class="mx-3" style="user-select:none" for="answ1">
-                                    Answer1
-                                </label>
-                            </span>
-                            <span style="font-size:1rem" class="d-flex align-items-center">
-                                <input value="true" id="answ2" type="checkbox" />
-                                <label class="mx-3" style="user-select:none" for="answ2">
-                                    Answer2
-                                </label>
-                            </span>
-                            <span style="font-size:1rem" class="d-flex align-items-center">
-                                <input value="true" id="answ3" type="checkbox" />
-                                <label class="mx-3" style="user-select:none" for="answ3">
-                                    Answer3
-                                </label>
-                            </span>
-                            <span style="font-size:1rem" class="d-flex align-items-center">
-                                <input value="true" id="answ4" type="checkbox" />
-                                <label class="mx-3" style="user-select:none" for="answ4">
-                                    Answer4
-                                </label>
-                        </label>
-                    </div>
-                </li>
-            </ol>
-        </div>
-    </div>
-</main>
+@{
+    int c = 1;
+}
 
-
-*@
-
-
-
-
-@model ExamCategoryVM
 
 <main>
     <div class="container">
-        <h1 class="title text-center py-3">Suallar</h1>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>suallar</th>
-                    <th>cavablar</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var question in Model.Questions)
-                {
-                    <tr>
-                        <td>@question.Content</td>
-                        <td>
-                            <ul>
-                                @foreach (var questionanswer in Model.QuestionAnswers.Where(x => x.QuestionId == question.Id))
-                                {
-                                    @if (questionanswer.Question.ExamCategoryId == Model.SelectedCategoryId)
-                                    {
-                                        <li>
-                                            <p class="btn btn-outline-success btn-sm my-1">@questionanswer.Answer.Option</p>
-                                        </li>
-                                    }
-                                }
-                            </ul>
-                        </td>
-                    </tr>
-                }
-                @*
-                @foreach (var question in Model.Questions)
-                {
-                <tr>
-                <td>@question.Content</td>
-                <td>
-                <ul>
-                @foreach (var questionanswer in Model.QuestionAnswers.Where(x => x.QuestionId == question.Id))
-                {
+        <div class="row">
+            <div class="col-lg-8 col-md-10 col-10 offset-md-2 m-auto">
+                <div class="card my-3">
+                    <h1 style="margin-bottom: 0px;" class="title text-center">@Model.CategoryName Exam</h1>
+                </div>
+                <!-- Q&A Section -->
+                <div class="card">
+                    <div class="card-body">
+                        <ol>
+                            @foreach (var question in Model.Questions)
+                            {
+                                <li class="mb-5">
+                                    <h5 class="card-title">@question.Content</h5>
 
-                <p class="btn btn-outline-success btn-sm my-1">@questionanswer.Answer.Option</p>
-                }
-                </ul>
-                </td>
-                </tr>
-                }*@
-            </tbody>
-        </table>
+                                    @foreach (var questionanswer in Model.QuestionAnswers.Where(x => x.QuestionId == question.Id))
+                                    {
+                                        @if (questionanswer.Question.ExamCategoryId == Model.SelectedCategoryId)
+                                        {
+                                            <!-- Answers -->
+                                            <div class="form-check">
+                                                <input value="true" class="form-check-input" type="checkbox" name="question1" id="answ_@c">
+                                                <label class="form-check-label" for="answ_@c">
+                                                    @questionanswer.Answer.Option
+                                                </label>
+                                            </div>
+                                        }
+                                        c++;
+                                    }
+                                </li>
+                            }
+                        </ol>
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </main>
