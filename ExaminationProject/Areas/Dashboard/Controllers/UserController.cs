@@ -121,26 +121,28 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(User user, IFormFile NewPhoto, string OldPhoto, int groupId)
+        public async Task<IActionResult> Edit(User user,IFormFile NewPhoto,string OldPhoto,int groupId)
         {
             try
             {
+                var data = await _userManager.FindByIdAsync(user.Id);
+
                 if (NewPhoto != null)
                 {
-                    user.PhotoUrl = ImageHelper.UploadImage(NewPhoto, _webHostEnvironment);
+                    data.PhotoUrl = ImageHelper.UploadImage(NewPhoto, _webHostEnvironment);
                 }
                 else
                 {
-                    user.PhotoUrl = OldPhoto;
+                    data.PhotoUrl = OldPhoto;
                 }
 
-                user.UpdatedDate = DateTime.Now;
-                var data = await _userManager.FindByIdAsync(user.Id);
                 data.UserName = user.UserName;
                 data.Surname = user.Surname;
                 data.Email = user.Email;
+                data.IsDeleted = user.IsDeleted;
+                data.UpdatedDate = DateTime.Now;
 
-                await _userManager.UpdateAsync(user);
+                await _userManager.UpdateAsync(data);
                 await _context.SaveChangesAsync();
 
                 var userGroup = await _context.UserGroups.Where(x => x.UserId == user.Id).ToListAsync();

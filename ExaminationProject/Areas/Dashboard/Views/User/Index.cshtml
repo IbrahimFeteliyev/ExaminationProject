@@ -17,8 +17,8 @@
                         <th>Name</th>
                         <th>Surname</th>
                         <th>Email</th>
-                        @*<th>CreatedDate</th>*@
-                        @*<th>UpdatedDate</th>*@
+                        <th>CreatedDate</th>
+                        <th>UpdatedDate</th>
                         <th>IsDeleted</th>
                         <th>Group</th>
                         <th>User roles</th>
@@ -31,8 +31,8 @@
                         <th>Name</th>
                         <th>Surname</th>
                         <th>Email</th>
-                        @*<th>CreatedDate</th>*@
-                        @*<th>UpdatedDate</th>*@
+                        <th>CreatedDate</th>
+                        <th>UpdatedDate</th>
                         <th>IsDeleted</th>
                         <th>Group</th>
                         <th>User roles</th>
@@ -49,8 +49,8 @@
                             <td>@user.UserName</td>
                             <td>@user.Surname</td>
                             <td>@user.Email</td>
-                            @*<td>@user.CreatedDate</td>*@
-                            @*<td>@user.UpdatedDate</td>*@
+                            <td>@user.CreatedDate</td>
+                            <td>@user.UpdatedDate</td>
                             <td>@user.IsDeleted</td>
                             <td>
                                 @foreach (var userGroup in Model.UserGroups.Where(x => x.UserId == user.Id))
