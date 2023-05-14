@@ -2,14 +2,14 @@
 using ExaminationProject.Models;
 using ExaminationProject.ViewModels;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace ExaminationProject.Controllers
 {
-    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -27,7 +27,7 @@ namespace ExaminationProject.Controllers
             {
                 ExamCategories = _context.ExamCategories.Where(x => x.IsDeleted == false).ToList(),
             };
-            
+
             return View(vm);
         }
 
@@ -35,6 +35,7 @@ namespace ExaminationProject.Controllers
         [Authorize(Policy = "IsNotDeletedPolicy")]
         public IActionResult ExamCategory(int id)
         {
+            var examCategory = _context.ExamCategories.Where(x => x.Id == id).FirstOrDefault();
             var questions = _context.Questions.Where(x => x.ExamCategoryId == id).Where(x => x.IsDeleted == false).ToList();
             var questionIds = questions.Select(x => x.Id).ToList();
             var questionAnswers = _context.QuestionAnswers
@@ -42,18 +43,119 @@ namespace ExaminationProject.Controllers
                 .Where(x => questionIds.Contains(x.QuestionId))
                 .ToList();
             var answers = questionAnswers.Select(x => x.Answer).Distinct().ToList();
-            var categoryName = _context.ExamCategories.Where(x => x.Id == id).First().CategoryName;
-            var vm = new ExamCategoryVM
+            var correctAnswerIds = new List<int>();
+            foreach (var question in questions)
+            {
+                var questionAnswersWithStatus = _context.QuestionAnswers
+                    .Include(x => x.Answer)
+                    .Where(x => x.QuestionId == question.Id && x.Answer.Status)
+                    .ToList();
+
+                correctAnswerIds.AddRange(questionAnswersWithStatus.Select(x => x.Answer.Id));
+            }
+
+            var viewModel = new ExamCategoryVM
             {
                 SelectedCategoryId = id,
+                SelectedCategoryName = examCategory.CategoryName,
                 Questions = questions,
                 Answers = answers,
                 QuestionAnswers = questionAnswers,
-                CategoryName = categoryName,
+                CorrectAnswerIds = correctAnswerIds,
+            };
+            return View(viewModel);
+        }
+
+        [HttpPost("examcategory/{id}")]
+        public IActionResult ExamCategory(int id, List<int> selectedAnswerIds)
+        {
+            var examCategory = _context.ExamCategories.FirstOrDefault(x => x.Id == id);
+            var questions = _context.Questions.Where(x => x.ExamCategoryId == id).ToList();
+            var questionIds = questions.Select(x => x.Id).ToList();
+            var questionAnswers = _context.QuestionAnswers
+                .Include(x => x.Answer)
+                .Where(x => questionIds.Contains(x.QuestionId))
+                .ToList();
+
+            foreach (var answer in questionAnswers.Select(x => x.Answer))
+            {
+                answer.Selected = selectedAnswerIds.Contains(answer.Id);
+            }
+
+            _context.SaveChanges();
+
+            var answers = questionAnswers.Select(x => x.Answer).Distinct().ToList();
+
+            var correctAnswerIds = new List<int>();
+            foreach (var question in questions)
+            {
+                var questionAnswersWithStatus = _context.QuestionAnswers
+                    .Include(x => x.Answer)
+                    .Where(x => x.QuestionId == question.Id && x.Answer.Status)
+                    .ToList();
+
+                correctAnswerIds.AddRange(questionAnswersWithStatus.Select(x => x.Answer.Id));
+            }
+
+
+            var viewModel = new ExamCategoryVM
+            {
+                SelectedCategoryId = id,
+                SelectedCategoryName = examCategory.CategoryName,
+                Questions = questions,
+                Answers = answers,
+                QuestionAnswers = questionAnswers,
+                SelectedAnswerIds = selectedAnswerIds,
+                CorrectAnswerIds = correctAnswerIds,
+            };
+            TempData["ExamCategoryVM"] = JsonConvert.SerializeObject(viewModel);
+            return RedirectToAction("Result", "Home");
+        }
+
+        [HttpGet]
+        public IActionResult Result()
+        {
+            var examCategoryVM = JsonConvert.DeserializeObject<ExamCategoryVM>(TempData["ExamCategoryVM"].ToString());
+
+            int correctAnswersCount = examCategoryVM.QuestionAnswers
+                .Where(qa => qa.Answer.Status)
+                .Count(qa => examCategoryVM.SelectedAnswerIds.Contains(qa.Answer.Id));
+
+            var examResult = new ExamResult
+            {
+                UserId = User.FindFirstValue(ClaimTypes.NameIdentifier),
+                ExamCategoryId = examCategoryVM.SelectedCategoryId,
+                CorrectAnswers = correctAnswersCount,
+                TotalQuestions = examCategoryVM.Questions.Count,
+                DateTaken = DateTime.Now,
             };
 
-            return View(vm);
+            _context.ExamResults.Add(examResult);
+            _context.SaveChanges();
+
+            var examCategory = _context.ExamCategories.FirstOrDefault(ec => ec.Id == examCategoryVM.SelectedCategoryId);
+
+            var examResults = _context.ExamResults
+                .Include(er => er.User)
+                .Where(er => er.ExamCategoryId == examCategory.Id)
+                .ToList();
+
+            var examResultVM = new ExamResultVM
+            {
+                ExamResults = examResults,
+                SelectedCategoryId = examCategoryVM.SelectedCategoryId,
+                SelectedCategoryName = examCategoryVM.SelectedCategoryName,
+                Questions = examCategoryVM.Questions,
+                Answers = examCategoryVM.Answers,
+                QuestionAnswers = examCategoryVM.QuestionAnswers,
+                SelectedAnswerIds = examCategoryVM.SelectedAnswerIds,
+                CorrectAnswerIds = examCategoryVM.CorrectAnswerIds,
+                CorrectAnswerCount = correctAnswersCount,
+            };
+
+            return View(examResultVM);
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

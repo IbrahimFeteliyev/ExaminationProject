@@ -1,0 +1,59 @@
+﻿@model ExamResultVM
+
+<main>
+    <div class="col-lg-8 col-md-10 col-10 offset-md-2 m-auto py-3">
+        <div class="row">
+            <div class="card my-3">
+                <h1 style="margin-bottom: 0px;" class="title text-center">@Model.SelectedCategoryName Exam</h1>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <ol>
+                        @foreach (var question in Model.Questions)
+                        {
+                            <li style="font-size:1.5rem">
+                                @question.Content
+                                <div class="answers mt-3">
+                                    <label class="d-block mb-2">
+                                        @foreach (var questionanswer in Model.QuestionAnswers.Where(x => x.QuestionId == question.Id && x.Question.ExamCategoryId == Model.SelectedCategoryId))
+                                        {
+                                            bool isSelected = Model.SelectedAnswerIds.Contains(questionanswer.AnswerId);
+                                            bool isCorrect = Model.CorrectAnswerIds.Contains(questionanswer.AnswerId);
+
+                                            <div class="form-check" style="font-size:1rem">
+                                                <input value="@questionanswer.AnswerId" name="selectedAnswerIds" id="@questionanswer.AnswerId" type="checkbox" disabled @if (isSelected)
+                                                {
+                                                    <text>checked</text>
+                                                }>
+
+                                                <label class="form-check-label mx-3" style="user-select:none" for="@questionanswer.AnswerId">
+                                                    @questionanswer.Answer.Option
+                                                    @if (isCorrect)
+                                                    {
+                                                        <span class="badge bg-success mx-2">true</span>
+                                                    }
+                                                    @if (!isCorrect)
+                                                    {
+                                                        @if (isSelected)
+                                                        {
+                                                            <span class="badge bg-danger mx-2">false</span>
+                                                        }
+                                                    }
+                                                </label>
+                                            </div>
+                                        }
+                                    </label>
+                                </div>
+                            </li>
+                        }
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="result mt-3 text-center">
+            <p class="lead">You have answered @Model.CorrectAnswerCount out of @Model.Questions.Count questions correctly.</p>
+            <a class="btn btn-primary" href="/">Go Back</a>
+
+        </div>
+   </div>
+</main>

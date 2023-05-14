@@ -1,48 +1,35 @@
 ﻿@model ExamCategoryVM
 
-@{
-    int c = 1;
-}
 
 
 <main>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 col-10 offset-md-2 m-auto">
-                <div class="card my-3">
-                    <h1 style="margin-bottom: 0px;" class="title text-center">@Model.CategoryName Exam</h1>
-                </div>
-                <!-- Q&A Section -->
-                <div class="card">
-                    <div class="card-body">
-                        <ol>
-                            @foreach (var question in Model.Questions)
-                            {
-                                <li class="mb-5">
-                                    <h5 class="card-title">@question.Content</h5>
-
-                                    @foreach (var questionanswer in Model.QuestionAnswers.Where(x => x.QuestionId == question.Id))
-                                    {
-                                        @if (questionanswer.Question.ExamCategoryId == Model.SelectedCategoryId)
+    <form method="post" enctype="multipart/form-data" class="col-lg-8 col-md-10 col-10 offset-md-2 m-auto py-3">
+            <div class="row">
+                    <div class="card my-3">
+                        <h1 style="margin-bottom: 0px;" class="title text-center">@Model.SelectedCategoryName Exam</h1>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <ol>
+                                @foreach (var question in Model.Questions)
+                                {
+                                    <li class="mb-5">
+                                        <h5 class="card-title">@question.Content</h5>
+                                        @foreach (var questionanswer in Model.QuestionAnswers.Where(x => x.QuestionId == question.Id && x.Question.ExamCategoryId == Model.SelectedCategoryId))
                                         {
-                                            <!-- Answers -->
-                                            <div class="form-check">
-                                                <input value="true" class="form-check-input" type="checkbox" name="question1" id="answ_@c">
-                                                <label class="form-check-label" for="answ_@c">
+                                            <div class="form-check" style="font-size:1rem">
+                                                <input value="@questionanswer.AnswerId" name="selectedAnswerIds" id="@questionanswer.AnswerId" type="checkbox" />
+                                                <label class="form-check-label mx-3" style="user-select:none" for="@questionanswer.AnswerId">
                                                     @questionanswer.Answer.Option
                                                 </label>
                                             </div>
                                         }
-                                        c++;
-                                    }
-                                </li>
-                            }
-                        </ol>
-                        <button class="btn btn-primary">Submit</button>
+                                    </li>
+                                }
+                            </ol>
+                            <button type="submit" formmethod="post" formaction="/examcategory/@Model.SelectedCategoryId" class="btn btn-primary">Submit</button>
+                        </div>
                     </div>
-                </div>
-
             </div>
-        </div>
-    </div>
+    </form>
 </main>

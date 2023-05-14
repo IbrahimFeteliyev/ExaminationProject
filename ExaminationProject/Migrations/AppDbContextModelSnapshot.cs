@@ -45,39 +45,6 @@ namespace ExaminationProject.Migrations
                     b.ToTable("Answers");
                 });
 
-            modelBuilder.Entity("ExaminationProject.Models.Exam", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ExamCategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GroupId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ExamCategoryId");
-
-                    b.HasIndex("GroupId");
-
-                    b.ToTable("Exams");
-                });
-
             modelBuilder.Entity("ExaminationProject.Models.ExamCategory", b =>
                 {
                     b.Property<int>("Id")
@@ -106,7 +73,16 @@ namespace ExaminationProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("ExamId")
+                    b.Property<int>("CorrectAnswers")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateTaken")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ExamCategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalQuestions")
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
@@ -115,7 +91,7 @@ namespace ExaminationProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ExamId");
+                    b.HasIndex("ExamCategoryId");
 
                     b.HasIndex("UserId");
 
@@ -439,30 +415,11 @@ namespace ExaminationProject.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ExaminationProject.Models.Exam", b =>
+            modelBuilder.Entity("ExaminationProject.Models.ExamResult", b =>
                 {
                     b.HasOne("ExaminationProject.Models.ExamCategory", "ExamCategory")
                         .WithMany()
                         .HasForeignKey("ExamCategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ExaminationProject.Models.Group", "Group")
-                        .WithMany()
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ExamCategory");
-
-                    b.Navigation("Group");
-                });
-
-            modelBuilder.Entity("ExaminationProject.Models.ExamResult", b =>
-                {
-                    b.HasOne("ExaminationProject.Models.Exam", "Exam")
-                        .WithMany()
-                        .HasForeignKey("ExamId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -472,7 +429,7 @@ namespace ExaminationProject.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Exam");
+                    b.Navigation("ExamCategory");
 
                     b.Navigation("User");
                 });
