@@ -4,6 +4,9 @@ using ExaminationProject.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+using System.Net.Mail;
+using System.Net;
 using Web.Helper;
 
 namespace ExaminationProject.Areas.Dashboard.Controllers
@@ -17,23 +20,23 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         private readonly IHttpContextAccessor _contextAccessor;
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly AppDbContext _context;
+        private IConfiguration Configuration { get; }
 
-
-        public UserController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IHttpContextAccessor contextAccessor, IWebHostEnvironment webHostEnvironment, AppDbContext context)
+        public UserController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IHttpContextAccessor contextAccessor, IWebHostEnvironment webHostEnvironment, AppDbContext context, IConfiguration configuration)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _contextAccessor = contextAccessor;
             _webHostEnvironment = webHostEnvironment;
             _context = context;
+            Configuration = configuration;
         }
         public IActionResult Index()
         {
-            UserVM vm = new ();
-            vm.Users = _userManager.Users.ToList(); 
+            UserVM vm = new();
+            vm.Users = _userManager.Users.ToList();
             vm.Groups = _context.Groups.ToList();
             vm.UserGroups = _context.UserGroups.ToList();
-            //var users = _userManager.Users.ToList();
             return View(vm);
         }
 
@@ -46,8 +49,9 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(User user, IFormFile NewPhoto, int groupId)
         {
+            string password = GeneratePassword();
             var passwordHasher = new PasswordHasher<IdentityUser>();
-            user.PasswordHash = passwordHasher.HashPassword(user, "123123Az@");
+            user.PasswordHash = passwordHasher.HashPassword(user, password);
             user.CreatedDate = DateTime.Now;
 
             user.PhotoUrl = ImageHelper.UploadImage(NewPhoto, _webHostEnvironment);
@@ -64,9 +68,40 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
 
             _context.UserGroups.Add(userGroup);
             await _context.SaveChangesAsync();
+            SendEmail(Configuration.GetValue<string>("FromEmail"), password);
             return RedirectToAction("Index");
         }
+        private static string GeneratePassword()
+        {
+            string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+            Random random = new();
+            string password = new string(Enumerable.Repeat(characters, 10)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
 
+            return password;
+        }
+        private void SendEmail(string to, string body)
+        {
+            string subject = "Şifrənizə baxın !";
+            string fromEmail = Configuration.GetValue<string>("FromEmail");
+            string fromPassword = Configuration.GetValue<string>("FromPassword");
+            using (SmtpClient client = new(Configuration.GetValue<string>("Host"), 587))
+            {
+                client.EnableSsl = true;
+                //client.UseDefaultCredentials = false;
+                client.Credentials = new NetworkCredential(fromEmail, fromPassword);
+
+                using (MailMessage mailMessage = new())
+                {
+                    mailMessage.From = new MailAddress(fromEmail);
+                    mailMessage.To.Add(to);
+                    mailMessage.Subject = subject;
+                    mailMessage.Body = body;
+
+                    client.Send(mailMessage);
+                }
+            }
+        }
 
         [HttpGet]
         public async Task<IActionResult> AddRole(string id)
@@ -121,7 +156,7 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(User user,IFormFile NewPhoto,string OldPhoto,int groupId)
+        public async Task<IActionResult> Edit(User user, IFormFile NewPhoto, string OldPhoto, int groupId)
         {
             try
             {
@@ -188,14 +223,5 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
                 throw;
             }
         }
-        //[HttpGet]
-        //public async Task<IActionResult> UserInfo()
-        //{
-        //    var userId = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-        //    User user = await _userManager.FindByIdAsync(userId);
-
-        //    return View(user);
-        //}
-
     }
 }

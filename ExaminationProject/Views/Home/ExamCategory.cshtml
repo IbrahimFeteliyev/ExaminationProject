@@ -17,7 +17,7 @@
                                         <h5 class="card-title">@question.Content</h5>
                                         @foreach (var questionanswer in Model.QuestionAnswers.Where(x => x.QuestionId == question.Id && x.Question.ExamCategoryId == Model.SelectedCategoryId))
                                         {
-                                            <div class="form-check" style="font-size:1rem">
+                                            <div class="form-check d-flex align-items-center" style="font-size:1rem">
                                                 <input value="@questionanswer.AnswerId" name="selectedAnswerIds" id="@questionanswer.AnswerId" type="checkbox" />
                                                 <label class="form-check-label mx-3" style="user-select:none" for="@questionanswer.AnswerId">
                                                     @questionanswer.Answer.Option

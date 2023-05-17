@@ -45,7 +45,6 @@ namespace Web.Areas.Dashboard.Controllers
         public IActionResult Edit(int id)
         {
             var edit = _context.Answers.FirstOrDefault(e => e.Id == id);
-            _context.SaveChanges();
             return View(edit);
         }
         [HttpPost]

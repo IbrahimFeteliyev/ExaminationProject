@@ -36,7 +36,9 @@ namespace ExaminationProject.Controllers
         public IActionResult ExamCategory(int id)
         {
             var examCategory = _context.ExamCategories.Where(x => x.Id == id).FirstOrDefault();
-            var questions = _context.Questions.Where(x => x.ExamCategoryId == id).Where(x => x.IsDeleted == false).ToList();
+
+            var questions = _context.Questions.Where(x => x.ExamCategoryId == id && x.IsDeleted == false).ToList();
+
             var questionIds = questions.Select(x => x.Id).ToList();
             var questionAnswers = _context.QuestionAnswers
                 .Include(x => x.Answer)
@@ -112,7 +114,7 @@ namespace ExaminationProject.Controllers
             return RedirectToAction("Result", "Home");
         }
 
-        [HttpGet]
+        [HttpGet("result")]
         public IActionResult Result()
         {
             var examCategoryVM = JsonConvert.DeserializeObject<ExamCategoryVM>(TempData["ExamCategoryVM"].ToString());

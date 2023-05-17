@@ -3,6 +3,7 @@ using ExaminationProject.Data;
 using ExaminationProject.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
 using static ExaminationProject.Authorization.IsNotDeletedRequirement;
 
@@ -36,8 +37,9 @@ builder.Services.AddAuthorization(options =>
 });
 builder.Services.AddScoped<IAuthorizationHandler, IsNotDeletedRequirementHandler>();
 
-
 var app = builder.Build();
+
+//app.UseExceptionHandler("/Home/Error");
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

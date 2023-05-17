@@ -2,6 +2,7 @@
 using ExaminationProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.ConstrainedExecution;
 
 namespace ExaminationProject.Areas.Dashboard.Controllers
 {
@@ -32,6 +33,7 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         {
             try
             {
+                group.CreatedDate = DateTime.Now;
                 _context.Groups.Add(group);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
@@ -45,7 +47,6 @@ namespace ExaminationProject.Areas.Dashboard.Controllers
         public IActionResult Edit(int id)
         {
             var edit = _context.Groups.FirstOrDefault(e => e.Id == id);
-            _context.SaveChanges();
             return View(edit);
         }
         [HttpPost]
