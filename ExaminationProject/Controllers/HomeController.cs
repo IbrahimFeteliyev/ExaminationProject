@@ -32,13 +32,11 @@ namespace ExaminationProject.Controllers
         }
 
         [HttpGet("examcategory/{id}")]
-        [Authorize(Policy = "IsNotDeletedPolicy")]
+        //[Authorize(Policy = "IsNotDeletedPolicy")]
         public IActionResult ExamCategory(int id)
         {
             var examCategory = _context.ExamCategories.Where(x => x.Id == id).FirstOrDefault();
-
-            var questions = _context.Questions.Where(x => x.ExamCategoryId == id && x.IsDeleted == false).ToList();
-
+            var questions = _context.Questions.Where(x => x.ExamCategoryId == id).Where(x => x.IsDeleted == false).ToList();
             var questionIds = questions.Select(x => x.Id).ToList();
             var questionAnswers = _context.QuestionAnswers
                 .Include(x => x.Answer)
@@ -99,7 +97,6 @@ namespace ExaminationProject.Controllers
                 correctAnswerIds.AddRange(questionAnswersWithStatus.Select(x => x.Answer.Id));
             }
 
-
             var viewModel = new ExamCategoryVM
             {
                 SelectedCategoryId = id,
@@ -110,52 +107,30 @@ namespace ExaminationProject.Controllers
                 SelectedAnswerIds = selectedAnswerIds,
                 CorrectAnswerIds = correctAnswerIds,
             };
-            TempData["ExamCategoryVM"] = JsonConvert.SerializeObject(viewModel);
-            return RedirectToAction("Result", "Home");
-        }
 
-        [HttpGet("result")]
-        public IActionResult Result()
-        {
-            var examCategoryVM = JsonConvert.DeserializeObject<ExamCategoryVM>(TempData["ExamCategoryVM"].ToString());
-
-            int correctAnswersCount = examCategoryVM.QuestionAnswers
-                .Where(qa => qa.Answer.Status)
-                .Count(qa => examCategoryVM.SelectedAnswerIds.Contains(qa.Answer.Id));
+            int correctAnswersCount = viewModel.QuestionAnswers
+               .Where(qa => qa.Answer.Status)
+               .Count(qa => viewModel.SelectedAnswerIds.Contains(qa.Answer.Id));
 
             var examResult = new ExamResult
             {
                 UserId = User.FindFirstValue(ClaimTypes.NameIdentifier),
-                ExamCategoryId = examCategoryVM.SelectedCategoryId,
+                ExamCategoryId = viewModel.SelectedCategoryId,
                 CorrectAnswers = correctAnswersCount,
-                TotalQuestions = examCategoryVM.Questions.Count,
+                TotalQuestions = viewModel.Questions.Count,
                 DateTaken = DateTime.Now,
             };
-
             _context.ExamResults.Add(examResult);
             _context.SaveChanges();
 
-            var examCategory = _context.ExamCategories.FirstOrDefault(ec => ec.Id == examCategoryVM.SelectedCategoryId);
+            return View("Result", viewModel);
+        }
 
-            var examResults = _context.ExamResults
-                .Include(er => er.User)
-                .Where(er => er.ExamCategoryId == examCategory.Id)
-                .ToList();
-
-            var examResultVM = new ExamResultVM
-            {
-                ExamResults = examResults,
-                SelectedCategoryId = examCategoryVM.SelectedCategoryId,
-                SelectedCategoryName = examCategoryVM.SelectedCategoryName,
-                Questions = examCategoryVM.Questions,
-                Answers = examCategoryVM.Answers,
-                QuestionAnswers = examCategoryVM.QuestionAnswers,
-                SelectedAnswerIds = examCategoryVM.SelectedAnswerIds,
-                CorrectAnswerIds = examCategoryVM.CorrectAnswerIds,
-                CorrectAnswerCount = correctAnswersCount,
-            };
-
-            return View(examResultVM);
+        [HttpGet]
+        public async Task<IActionResult> Result(ExamCategoryVM examCategoryVM)
+        {
+         
+            return View(examCategoryVM);
         }
 
 
